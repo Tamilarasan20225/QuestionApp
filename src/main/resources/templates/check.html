@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <tr th:each="questions : ${quiz}">
+        
+        <td>
+            <input hidden th:name="|books[${itemStat.index}]\|" th:value="${quiz.getQuestion()}"/>
+        </td>
+        <td>
+            <input th:name="|books[${itemStat.index}].title|" th:value="${book.getTitle()}"/>
+        </td>
+        <td>
+            <input th:name="|books[${itemStat.index}].author|" th:value="${book.getAuthor()}"/>
+        </td>
+    </tr>
+</body>
+</html>
